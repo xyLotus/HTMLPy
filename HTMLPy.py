@@ -3,20 +3,33 @@ HtmlWriter is a libary made for efficiently creating HTML documents in Python.
 """
 
 __auhtor__ = 'Lotus'
-__version__ = 0.5 # 16-03-2021 | semi-stable
+__version__ = 0.5 # 18-03-2021 | semi-stable
 
+# stdlibs
 import os
+import datetime
 
+# Non-stdlibs
 try:
     from bs4 import BeautifulSoup
 except ImportError as e:
     print('Error while trying to import external libary.')
     print(f'Traceback:\n{e}')
 
+
 def error(txt):
     """ Outputs error with error modified message. """
     print(f'ERROR : [{txt}]')
 
+# logging wrapper | user-side
+def htmlog(function):
+    def wrapper(*args, **kwargs):
+        with open('debug.log', 'w') as f:
+            current_time = datetime.datetime.now()
+            func_name = function.__name__
+            f.write(f'[{current_time}] - {func_name} ran with args: {args} || kw_args: {kwargs} ')
+        return function(args, kwargs)
+    return wrapper
 
 class Document:
     """ Stores all the attributes for the document. """
@@ -247,6 +260,3 @@ class Framework:
 
         del tmp_str
     #======================================
-    
-
-    
