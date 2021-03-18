@@ -38,7 +38,6 @@ frame.title('My Document')
 
 # HTML Code Generation
 my_text = 'Wow this is a really long text, I wonder what this sample text is used for?'.split()
-print(my_text)
 for _ in my_text:
     frame.p(_)
 
