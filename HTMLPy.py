@@ -185,7 +185,6 @@ class Framework:
         """ adds paragraph to html src. [method-alt-version: paragraph] """
         txt = f'<p style="color: {color}">{txt}</p>'
         append_content(txt)
-        print(f'created p tag [{txt}]')
 
     def header(self, txt, size='1', color='black'):
         """ adds header to html src. """
