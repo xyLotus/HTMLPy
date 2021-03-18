@@ -99,7 +99,7 @@ class FileStream:
         # creating initial file
         with open(file_name, 'w') as f:
             pass
-
+        
         # trying to retrive sekeleton
         try:
             skeleton_str = self.get_content('skeleton.html')
@@ -248,8 +248,9 @@ class Framework:
             index_count += cell_len
         
         # Cleaning up (Empty []) list with table cell data
-        while [] in rList:
-            rList.remove([])
+        for i, element in enumerate(rList):
+            if element == []:
+                del rList[i]
         
         # Adding table data cells to temp str
         for __list__ in rList:
