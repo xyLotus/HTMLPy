@@ -95,7 +95,6 @@ class FileStream:
         # checking if file is already existent
         if os.path.isfile(file_name):
             raise FileExistsError
-            return
 
         # creating initial file
         with open(file_name, 'w') as f:
