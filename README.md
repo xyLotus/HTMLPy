@@ -20,6 +20,7 @@
 | ------------- | ----------------- | ------------------------------------------------------ |
 | `paragraph, p`| *Text*            | Creating a paragraph with a given text                 |
 | `header, h`   | *Size, Text*      | Creating a header with the given text and size         |
+| `table`       | *headers, cells*  | Creating a table with the given headers and cells      |
 | `code, c`     | *Code_Text*       | Creating a code tag element with the given text        |
 | `background ` | *Background_Color*| Changes the doc's background to the given bg color     |
 | `finish`      |                   | Finalizes the document and removes the {document} tag  |
