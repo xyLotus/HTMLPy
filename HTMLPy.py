@@ -38,6 +38,7 @@ class Document:
     charset = 'UTF-8'
     lang = ''
     content = ''
+    bg_color = ''
 
 doc = Document()
 
@@ -51,10 +52,9 @@ def insert_tag(_list):
                     '  {content}', 
                     '    {content}', 
                     '      {content}'] 
-    body_tags = {'</body>': 2, 
-                 '  </body>': 4, 
-                 '    </body>': 6, 
-                 '      </body>': 8 }
+
+    top = 8
+    body_tags = {f'{" " * (f - 2)}</body>': f for f in range(2, top + 2, 2)}
     for tag in content_tags: 
         try:
             _list.index(tag)
@@ -153,7 +153,8 @@ class FileStream:
                                             title = doc.title,
                                             char = doc.charset,
                                             author = doc.author,
-                                            content = doc.content )
+                                            content = doc.content, 
+                                            bg_color = doc.bg_color )
         
         soup = BeautifulSoup(content_instance, 'html.parser')
         with open(self.c_file, 'w') as f:
@@ -188,6 +189,10 @@ class Framework:
     
 
     #=========FileModification=============
+    def background(self, color):
+        """ changes background color of current htmldoc. """
+        doc.bg_color = color
+
     def paragraph(self, txt, color='black'):
         """ adds paragraph to html src. """
         txt = f'<p style="color: {color}>{txt}</p>'
