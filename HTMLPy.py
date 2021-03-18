@@ -24,11 +24,11 @@ def error(txt):
 # logging wrapper | user-side
 def htmlog(function):
     def wrapper(*args, **kwargs):
-        with open('debug.log', 'w') as f:
+        with open('debug.log', 'a') as f:
             current_time = datetime.datetime.now()
             func_name = function.__name__
-            f.write(f'[{current_time}] - {func_name} ran with args: {args} || kw_args: {kwargs} ')
-        return function(args, kwargs)
+            f.write(f'[{current_time}] - {func_name} ran with args: {args} || kw_args: {kwargs}\n')
+        return function(*args, **kwargs)
     return wrapper
 
 class Document:
@@ -148,7 +148,6 @@ class FileStream:
                 if self.file_opened:
                     content_instance = self.file_str.format(content = doc.content)
                 else:
-                    print(doc.content)
                     content_instance = self.file_str.format(
                                             lang = doc.lang,
                                             title = doc.title,
@@ -260,3 +259,6 @@ class Framework:
 
         del tmp_str
     #======================================
+    
+
+    
