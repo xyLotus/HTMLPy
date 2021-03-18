@@ -7,3 +7,27 @@
 </p>
 <p align="center">HTML-Python is a libary used for writing HTML in Python!</p>
 <p align="center">You can integrate it into your code & algorithms to write HTML the faster and easier way.</p>
+
+## Usage - Functions</h2>
+### Program Flow Control Commands
+| Command       | Arguments         | Purpose                                                   |
+| ------------- | ----------------- | --------------------------------------------------------- |
+| `new`         | *file_name*       | Creates new HTML document with given name                 |
+| `open`        | *file_name*       | Opens given HTML document and creates {content} tag       |
+
+### Document Editing Commands
+| Command       | Arguments         | Purpose                                                |
+| ------------- | ----------------- | ------------------------------------------------------ |
+| `paragraph, p`| *Text*            | Creating a paragraph with a given text                 |
+| `header, h`   | *Size, Text*      | Creating a header with the given text and size         |
+| `code, c`     | *Code_Text*       | Creating a code tag element with the given text        |
+| `background ` | *Background_Color*| Changes the doc's background to the given bg color     |
+| `finish`      |                   | Finalizes the document and removes the {document} tag  |
+
+### Document Information Editing Commands
+| Command         | Arguments           | Purpose                                                  |
+| --------------- | ------------------- | -------------------------------------------------------- |
+| `lang`          | *New_Language*      | Changes document language to given lang                  |
+| `title`         | *New_Title*         | Changes the title to the given title in the document     |
+| `charset`       | *New_Charset*       | Changes the charset to the given charset in the document |
+| `author`        | *New_Author*        | Changes the author to the given author in the document   |
