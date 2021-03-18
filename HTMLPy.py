@@ -260,8 +260,6 @@ class Framework:
 
         full_table = f'<table style="width: {width}%">\n{tmp_str}</table>'
         append_content(full_table)
-
-        del tmp_str
     #======================================
     
 
